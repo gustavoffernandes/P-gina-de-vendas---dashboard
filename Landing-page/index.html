@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proativa — Gestão de Riscos Psicossociais para adequação à NR-01. Dashboard, heatmap PxS, relatórios e planos de ação. 70% OFF no lançamento." />
+  <title>Proativa | Gestão de Riscos Psicossociais — Adequação NR-01</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- SEÇÃO 1: Floating bar + Navbar -->
+  <div class="fixed inset-x-0 top-0 z-[60] flex flex-col">
+    <div
+      id="top-announcement"
+      role="region"
+      aria-label="Alerta de prazo legal"
+      class="flex min-h-[var(--announce-h)] items-stretch gap-1 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 px-2 py-2 text-xs font-semibold text-white shadow-md sm:gap-2 sm:px-3 sm:text-sm"
+    >
+      <div class="flex min-w-0 flex-1 items-center justify-center gap-2 px-1 text-center leading-snug sm:px-2">
+        <span aria-hidden="true">⚠️</span>
+        <span>ATENÇÃO: A fiscalização de Riscos Psicossociais na nova NR-01 começa em 26/05/2026. Evite multas!</span>
+      </div>
+      <button
+        type="button"
+        id="announce-close"
+        class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/30 bg-white/15 text-lg font-bold leading-none text-white transition hover:bg-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 sm:h-9 sm:w-9"
+        aria-label="Fechar aviso de prazo legal"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <header class="glass-nav border-b border-white/10 shadow-lg">
+      <nav class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 lg:px-8" aria-label="Principal">
+        <div class="flex items-center justify-between gap-4 sm:contents">
+          <a href="#topo" class="font-display text-xl font-bold tracking-tight text-white">
+            <span class="text-blue-400">Pro</span>ativa
+          </a>
+          <a
+            href="#precos"
+            class="inline-flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/30 transition hover:from-emerald-400 hover:to-emerald-500 cta-pulse sm:order-last"
+          >
+            Garantir 70% OFF
+          </a>
+        </div>
+        <ul class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 border-t border-white/10 pt-3 text-xs font-medium text-slate-200 sm:border-0 sm:pt-0 sm:text-sm md:gap-6">
+          <li><a href="#risco" class="transition hover:text-white">O Risco</a></li>
+          <li><a href="#problema" class="transition hover:text-white">O Problema</a></li>
+          <li><a href="#relatorios" class="transition hover:text-white">Relatórios</a></li>
+          <li><a href="#solucao" class="transition hover:text-white">Solução</a></li>
+          <li><a href="#como-funciona" class="transition hover:text-white">Como funciona</a></li>
+          <li><a href="#precos" class="transition hover:text-white">Preços</a></li>
+          <li><a href="#faq" class="transition hover:text-white">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div id="topo" class="header-spacer" aria-hidden="true"></div>
+
+  <main id="conteudo-principal">
+    <!-- SEÇÃO 2: Hero -->
+    <section class="hero-radial relative overflow-hidden px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14" aria-labelledby="hero-heading">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-8">
+        <div class="relative z-10">
+          <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-amber-300 sm:text-sm">
+            <span aria-hidden="true">🔥</span>
+            Oferta de lançamento: 70% de desconto liberado
+          </p>
+          <h1 id="hero-heading" class="font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            A nova NR-01 vai multar a sua empresa se você ignorar a Saúde Mental.
+          </h1>
+          <p class="mt-5 max-w-xl text-lg text-slate-300">
+            A partir de maio de 2026, a Gestão de Riscos Psicossociais é obrigatória no PGR. Abandone planilhas amadoras. O Proativa mapeia, analisa e gera relatórios automáticos à prova de passivos trabalhistas.
+          </p>
+
+          <div class="mt-8 rounded-2xl border border-white/10 bg-slate-900/50 p-5 shadow-xl backdrop-blur-sm">
+            <p class="text-center text-sm font-semibold uppercase tracking-wider text-red-400">O tempo para se adequar está acabando:</p>
+            <div
+              class="mt-4 grid grid-cols-4 gap-2 text-center sm:gap-4"
+              role="timer"
+              aria-live="polite"
+              aria-atomic="true"
+              id="countdown"
+            >
+              <div class="rounded-xl bg-slate-950/80 px-2 py-4 ring-1 ring-white/10">
+                <span id="cd-days" class="font-mono text-3xl font-bold tabular-nums text-white sm:text-4xl">00</span>
+                <span class="mt-1 block text-[10px] font-medium uppercase text-slate-400 sm:text-xs">Dias</span>
+              </div>
+              <div class="rounded-xl bg-slate-950/80 px-2 py-4 ring-1 ring-white/10">
+                <span id="cd-hours" class="font-mono text-3xl font-bold tabular-nums text-white sm:text-4xl">00</span>
+                <span class="mt-1 block text-[10px] font-medium uppercase text-slate-400 sm:text-xs">Horas</span>
+              </div>
+              <div class="rounded-xl bg-slate-950/80 px-2 py-4 ring-1 ring-white/10">
+                <span id="cd-minutes" class="font-mono text-3xl font-bold tabular-nums text-white sm:text-4xl">00</span>
+                <span class="mt-1 block text-[10px] font-medium uppercase text-slate-400 sm:text-xs">Min</span>
+              </div>
+              <div class="rounded-xl bg-slate-950/80 px-2 py-4 ring-1 ring-white/10">
+                <span id="cd-seconds" class="font-mono text-3xl font-bold tabular-nums text-emerald-400 sm:text-4xl">00</span>
+                <span class="mt-1 block text-[10px] font-medium uppercase text-slate-400 sm:text-xs">Seg</span>
+              </div>
+            </div>
+            <p class="mt-3 text-center text-xs text-slate-500">Contagem regressiva até a vigência: 26 de maio de 2026.</p>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href="#precos"
+              class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-center text-base font-bold text-white shadow-glow transition hover:from-blue-400 hover:to-blue-500"
+            >
+              Proteger Minha Empresa com 70% OFF
+            </a>
+            <a href="#solucao" class="text-center text-sm font-semibold text-blue-300 underline-offset-4 hover:text-white hover:underline">
+              Ver como o dashboard funciona
+            </a>
+          </div>
+        </div>
+
+        <!-- Mockup -->
+        <div class="relative z-10 flex justify-center lg:justify-end" aria-hidden="true">
+          <div class="absolute -right-10 -top-10 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+          <div class="absolute -bottom-6 left-0 h-48 w-48 rounded-full bg-blue-600/15 blur-2xl"></div>
+          <div
+            class="mockup-glow relative w-full max-w-lg overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl"
+            style="--tw-shadow-glow: 0 0 100px -20px rgba(59, 130, 246, 0.5);"
+          >
+            <div class="flex h-[420px] sm:h-[460px]">
+              <!-- Sidebar -->
+              <aside class="flex w-[72px] shrink-0 flex-col border-r border-white/10 bg-slate-950 py-4">
+                <div class="mx-auto mb-4 h-8 w-8 rounded-lg bg-blue-600"></div>
+                <div class="flex flex-1 flex-col items-center gap-3">
+                  <span class="h-8 w-8 rounded-lg bg-white/10"></span>
+                  <span class="h-8 w-8 rounded-lg bg-blue-500/30 ring-2 ring-blue-400"></span>
+                  <span class="h-8 w-8 rounded-lg bg-white/10"></span>
+                  <span class="h-8 w-8 rounded-lg bg-white/10"></span>
+                </div>
+              </aside>
+              <div class="flex min-w-0 flex-1 flex-col bg-slate-50">
+                <div class="flex items-center justify-between border-b border-slate-200 bg-white px-3 py-2 sm:px-4">
+                  <span class="truncate text-xs font-bold text-slate-700 sm:text-sm">Heatmap PxS — Setores</span>
+                  <span class="rounded-md bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-800">Ao vivo</span>
+                </div>
+                <div class="flex-1 overflow-hidden p-3 sm:p-4">
+                  <div class="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                    <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+                      <p class="text-[10px] font-medium text-slate-500">Risco geral</p>
+                      <p class="font-display text-xl font-bold text-amber-600">Médio</p>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+                      <p class="text-[10px] font-medium text-slate-500">Respostas</p>
+                      <p class="font-mono text-xl font-bold text-slate-800">1.284</p>
+                    </div>
+                  </div>
+                  <p class="mb-2 text-[10px] font-semibold uppercase tracking-wide text-slate-500">Matriz Probabilidade × Severidade</p>
+                  <div class="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+                    <table class="w-full min-w-[280px] border-collapse text-left text-[10px] sm:text-xs">
+                      <thead>
+                        <tr class="bg-slate-100 text-slate-600">
+                          <th class="border border-slate-200 px-2 py-1.5 font-medium" scope="col">Setor</th>
+                          <th class="border border-slate-200 px-2 py-1.5 font-medium" scope="col">P</th>
+                          <th class="border border-slate-200 px-2 py-1.5 font-medium" scope="col">S</th>
+                          <th class="border border-slate-200 px-2 py-1.5 font-medium" scope="col">Nível</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="border border-slate-200 px-2 py-2 font-medium text-slate-700">Operações</td>
+                          <td class="border border-slate-200 px-2 py-2">4</td>
+                          <td class="border border-slate-200 px-2 py-2">3</td>
+                          <td class="border border-slate-200 bg-amber-200 px-2 py-2 font-semibold text-amber-900">Médio</td>
+                        </tr>
+                        <tr>
+                          <td class="border border-slate-200 px-2 py-2 font-medium text-slate-700">TI</td>
+                          <td class="border border-slate-200 px-2 py-2">2</td>
+                          <td class="border border-slate-200 px-2 py-2">2</td>
+                          <td class="border border-slate-200 bg-emerald-200 px-2 py-2 font-semibold text-emerald-900">Baixo</td>
+                        </tr>
+                        <tr>
+                          <td class="border border-slate-200 px-2 py-2 font-medium text-slate-700">Logística</td>
+                          <td class="border border-slate-200 px-2 py-2">5</td>
+                          <td class="border border-slate-200 px-2 py-2">5</td>
+                          <td class="border border-slate-200 bg-red-300 px-2 py-2 font-semibold text-red-950">Crítico</td>
+                        </tr>
+                        <tr>
+                          <td class="border border-slate-200 px-2 py-2 font-medium text-slate-700">RH</td>
+                          <td class="border border-slate-200 px-2 py-2">3</td>
+                          <td class="border border-slate-200 px-2 py-2">4</td>
+                          <td class="border border-slate-200 bg-amber-200 px-2 py-2 font-semibold text-amber-900">Médio</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mt-3 flex h-16 items-end gap-1 rounded-lg bg-slate-100 px-2 pb-1 pt-2">
+                    <div class="flex-1 rounded-t bg-blue-500" style="height: 45%"></div>
+                    <div class="flex-1 rounded-t bg-blue-500" style="height: 70%"></div>
+                    <div class="flex-1 rounded-t bg-blue-500" style="height: 55%"></div>
+                    <div class="flex-1 rounded-t bg-blue-500" style="height: 90%"></div>
+                    <div class="flex-1 rounded-t bg-blue-500" style="height: 40%"></div>
+                    <div class="flex-1 rounded-t bg-blue-500" style="height: 65%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: O Risco Fatal -->
+    <section id="risco" class="scroll-mt-28 border-y border-slate-200 bg-white px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="risco-heading">
+      <div class="mx-auto max-w-7xl">
+        <h2 id="risco-heading" class="font-display text-center text-3xl font-bold text-slate-900 sm:text-4xl">
+          O que acontece se você não fizer a Análise Psicossocial?
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-slate-600">
+          A omissão deixa rastros na auditoria e na justiça. Três frentes que drenam caixa e reputação.
+        </p>
+        <div class="mt-14 grid gap-8 md:grid-cols-3">
+          <article class="rounded-2xl border border-red-200/80 bg-gradient-to-b from-red-50/80 to-white p-8 shadow-lg shadow-red-100/50">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-100 text-2xl" aria-hidden="true">⚠️</div>
+            <h3 class="font-display text-xl font-bold text-slate-900">Multas pesadas e interdição</h3>
+            <p class="mt-3 text-slate-600">
+              Falta de PGR atualizado com riscos psicossociais gera multas que podem ultrapassar R$ 100 mil e paralisação das atividades.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-red-200/80 bg-gradient-to-b from-red-50/80 to-white p-8 shadow-lg shadow-red-100/50">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-100 text-2xl" aria-hidden="true">📉</div>
+            <h3 class="font-display text-xl font-bold text-slate-900">Explosão do passivo trabalhista</h3>
+            <p class="mt-3 text-slate-600">
+              O Burnout (Síndrome do Esgotamento Profissional) agora é doença ocupacional. Sem controle, sua empresa perde todas as ações na justiça.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-red-200/80 bg-gradient-to-b from-red-50/80 to-white p-8 shadow-lg shadow-red-100/50">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-100 text-2xl" aria-hidden="true">📊</div>
+            <h3 class="font-display text-xl font-bold text-slate-900">Aumento de impostos (FAP/NTEP)</h3>
+            <p class="mt-3 text-slate-600">
+              Afastamentos psiquiátricos disparam a alíquota do seu seguro de acidente de trabalho. Você vai pagar mais impostos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: O Problema — Comparativo + Público-alvo -->
+    <section id="problema" class="relative scroll-mt-28 overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-50 px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="problema-heading">
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-10%,rgba(239,68,68,0.08),transparent)]" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-bold uppercase tracking-wider text-red-600">O problema real no chão de fábrica</p>
+          <h2 id="problema-heading" class="mt-2 font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">
+            Planilhas e improviso não seguram a nova NR-01.
+          </h2>
+          <p class="mt-4 text-lg text-slate-600">
+            A diferença entre reagir à fiscalização e liderar a conformidade está no sistema que você usa hoje.
+          </p>
+        </div>
+
+        <div class="mt-14 flex flex-col items-stretch gap-6 lg:flex-row lg:items-stretch">
+          <div class="min-w-0 flex-1 rounded-2xl border-2 border-red-300/80 bg-gradient-to-br from-red-50 to-white p-6 shadow-xl shadow-red-200/40 sm:p-8">
+            <div class="flex items-center gap-3 border-b border-red-200 pb-4">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white" aria-hidden="true">✕</span>
+              <div>
+                <h3 class="font-display text-xl font-bold text-red-950">Sem o Proativa</h3>
+                <p class="text-sm font-medium text-red-700">Você no escuro até dar problema</p>
+              </div>
+            </div>
+            <ul class="mt-6 space-y-4 text-slate-700" role="list">
+              <li class="flex gap-3"><span class="text-red-500" aria-hidden="true">▸</span> Planilhas desatualizadas e versões conflitantes do PGR.</li>
+              <li class="flex gap-3"><span class="text-red-500" aria-hidden="true">▸</span> Tabulação manual que atrasa laudos e abre brecha na auditoria.</li>
+              <li class="flex gap-3"><span class="text-red-500" aria-hidden="true">▸</span> Dificuldade em provar medidas de prevenção adotadas no tempo certo.</li>
+              <li class="flex gap-3"><span class="text-red-500" aria-hidden="true">▸</span> Risco alto de multas, interdições e passivo trabalhista após 26/05/2026.</li>
+            </ul>
+          </div>
+          <div class="flex shrink-0 items-center justify-center py-2 lg:w-14 lg:flex-col lg:py-0">
+            <span class="compare-vs">VS</span>
+          </div>
+          <div class="min-w-0 flex-1 rounded-2xl border-2 border-emerald-400/90 bg-gradient-to-br from-emerald-50 via-white to-blue-50/80 p-6 shadow-xl shadow-emerald-200/50 ring-2 ring-emerald-500/20 sm:p-8">
+            <div class="flex items-center gap-3 border-b border-emerald-200 pb-4">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 text-lg text-white" aria-hidden="true">✓</span>
+              <div>
+                <h3 class="font-display text-xl font-bold text-emerald-950">Com o Proativa</h3>
+                <p class="text-sm font-medium text-emerald-800">Conformidade com histórico e relatórios prontos</p>
+              </div>
+            </div>
+            <ul class="mt-6 space-y-4 text-slate-700" role="list">
+              <li class="flex gap-3"><span class="text-emerald-600" aria-hidden="true">▸</span> Dashboard com matriz P×S, heatmap e trilha de evidências para o PGR.</li>
+              <li class="flex gap-3"><span class="text-emerald-600" aria-hidden="true">▸</span> Automação da coleta e dos relatórios — menos horas, mais precisão.</li>
+              <li class="flex gap-3"><span class="text-emerald-600" aria-hidden="true">▸</span> Planos de ação integrados e exportação PDF em um clique.</li>
+              <li class="flex gap-3"><span class="text-emerald-600" aria-hidden="true">▸</span> Você negocia com segurança jurídica antes da fiscalização apertar.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATÓRIOS: entregáveis profissionais -->
+    <section id="relatorios" class="scroll-mt-28 border-y border-slate-200 bg-white px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="relatorios-heading">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="inline-flex rounded-full bg-violet-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-violet-800">
+            Relatórios
+          </p>
+          <h2 id="relatorios-heading" class="mt-4 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Relatórios Profissionais Completos
+          </h2>
+          <p class="mt-4 text-lg text-slate-600">
+            Gere relatórios detalhados com análises automáticas, gráficos profissionais e recomendações de ação. Tudo pronto para apresentar aos clientes e anexar ao PGR.
+          </p>
+        </div>
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50">
+            <div class="reports-icon-red mb-4 flex h-12 w-12 items-center justify-center rounded-xl" aria-hidden="true">
+              <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Relatório PDF completo</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Documento profissional com capa, metodologia, resultados por escala e fator, gráficos radar, Matriz P×S, plano de ação sugerido e conclusões.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50">
+            <div class="reports-icon-green mb-4 flex h-12 w-12 items-center justify-center rounded-xl" aria-hidden="true">
+              <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Exportação Excel/CSV</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Dados brutos organizados para análise própria: médias por escala, fator, questão, GHE. Distribuições percentuais e lista de respondentes.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50">
+            <div class="reports-icon-blue mb-4 flex h-12 w-12 items-center justify-center rounded-xl" aria-hidden="true">
+              <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Comparativo e evolução</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Compare resultados entre GHEs da mesma pesquisa ou acompanhe a evolução temporal entre pesquisas diferentes da mesma empresa.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50">
+            <div class="reports-icon-violet mb-4 flex h-12 w-12 items-center justify-center rounded-xl" aria-hidden="true">
+              <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Filtros avançados</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Filtre resultados por GHE (Grupo Homogêneo de Exposição), setor, unidade ou qualquer segmentação demográfica definida.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: Solução -->
+    <section id="solucao" class="scroll-mt-28 bg-slate-50 px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="solucao-heading">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 id="solucao-heading" class="font-display text-3xl font-bold text-slate-900 sm:text-4xl">
+            O Proativa faz o trabalho complexo por você.
+          </h2>
+          <p class="mt-4 text-lg text-slate-600">
+            A única plataforma focada na metodologia Proart que entrega tudo que a auditoria exige.
+          </p>
+        </div>
+        <ul class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
+          <li id="matriz-pxs" class="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-xl scroll-mt-28">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700" aria-hidden="true">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Heatmap de Riscos (Matriz PxS)</h3>
+            <p class="mt-2 text-slate-600">Visualização instantânea de Probabilidade × Severidade por setor.</p>
+          </li>
+          <li class="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-xl">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700" aria-hidden="true">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Análise Demográfica e Temporal</h3>
+            <p class="mt-2 text-slate-600">Filtre dados por gênero, idade, cargo e compare a evolução histórica.</p>
+          </li>
+          <li class="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-xl">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700" aria-hidden="true">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Planos de Ação Inteligentes</h3>
+            <p class="mt-2 text-slate-600">Gerenciamento integrado das medidas de mitigação direto no dashboard.</p>
+          </li>
+          <li class="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-xl">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700" aria-hidden="true">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Gestão Multi-Empresas</h3>
+            <p class="mt-2 text-slate-600">Compare a saúde ocupacional de diferentes unidades ou filiais no mesmo painel.</p>
+          </li>
+          <li class="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-xl">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700" aria-hidden="true">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Automação e Exportação</h3>
+            <p class="mt-2 text-slate-600">Integração com Google Sheets e exportação de relatórios em PDF com 1 clique para anexar ao PGR.</p>
+          </li>
+          <li class="rounded-2xl border border-slate-200/80 bg-white p-8 shadow-xl">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700" aria-hidden="true">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">100% Anônimo (LGPD)</h3>
+            <p class="mt-2 text-slate-600">Coleta de dados blindada para proteger o sigilo do colaborador e a empresa.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: Como funciona -->
+    <section id="como-funciona" class="scroll-mt-28 bg-white px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="como-heading">
+      <div class="mx-auto max-w-4xl">
+        <h2 id="como-heading" class="text-center font-display text-3xl font-bold text-slate-900 sm:text-4xl">
+          Três passos. Zero complicação.
+        </h2>
+        <ol class="relative mt-16 space-y-0">
+          <li class="relative flex gap-6 pb-12 md:gap-10">
+            <div class="relative flex flex-col items-center">
+              <span class="z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600 font-display text-lg font-bold text-white shadow-lg">1</span>
+              <div class="step-line absolute top-12 bottom-0 w-0.5" aria-hidden="true"></div>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-display text-xl font-bold text-slate-900">Dispare a pesquisa anônima</h3>
+              <p class="mt-2 text-slate-600">Link seguro, compatível com LGPD, pronto para circular internamente em minutos.</p>
+            </div>
+          </li>
+          <li class="relative flex gap-6 pb-12 md:gap-10">
+            <div class="relative flex flex-col items-center">
+              <span class="z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600 font-display text-lg font-bold text-white shadow-lg">2</span>
+              <div class="step-line absolute top-12 bottom-0 w-0.5" aria-hidden="true"></div>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-display text-xl font-bold text-slate-900">O Dashboard processa em tempo real</h3>
+              <p class="mt-2 text-slate-600">Heatmap, demografia e tendências atualizadas conforme as respostas chegam.</p>
+            </div>
+          </li>
+          <li class="relative flex gap-6 md:gap-10">
+            <div class="relative flex flex-col items-center">
+              <span class="z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-emerald-500 font-display text-lg font-bold text-white shadow-lg">3</span>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-display text-xl font-bold text-slate-900">Exporte o PDF e crie os Planos de Ação</h3>
+              <p class="mt-2 text-slate-600">Documentação pronta para o PGR e medidas de mitigação rastreáveis no mesmo lugar.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 6: Prova social + Depoimentos -->
+    <section id="depoimentos" class="border-y border-slate-200 bg-slate-50 px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="prova-heading">
+      <div class="mx-auto max-w-7xl">
+        <h2 id="prova-heading" class="text-center font-display text-3xl font-bold text-slate-900 sm:text-4xl">
+          Resultados que aparecem no PGR e no caixa
+        </h2>
+        <p class="mx-auto mt-3 max-w-2xl text-center text-slate-600">
+          Números da base e histórias de quem trocou planilha por conformidade real.
+        </p>
+        <div class="mt-10 grid gap-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-xl md:grid-cols-3 md:gap-8 md:p-10">
+          <div class="text-center">
+            <p class="font-display text-4xl font-extrabold text-blue-600">+10.000</p>
+            <p class="mt-1 text-sm font-medium text-slate-600">avaliações processadas na plataforma</p>
+          </div>
+          <div class="text-center border-y border-slate-200 py-6 md:border-x md:border-y-0 md:py-0">
+            <p class="font-display text-4xl font-extrabold text-slate-900">Proart</p>
+            <p class="mt-1 text-sm font-medium text-slate-600">Metodologia científica validada</p>
+          </div>
+          <div class="text-center">
+            <p class="font-display text-4xl font-extrabold text-emerald-600">NR-01</p>
+            <p class="mt-1 text-sm font-medium text-slate-600">Adequação imediata ao PGR</p>
+          </div>
+        </div>
+
+        <h3 class="mt-16 text-center font-display text-2xl font-bold text-slate-900">Depoimentos</h3>
+        <div class="mt-10 grid gap-8 md:grid-cols-3">
+          <figure class="flex h-full flex-col rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-8 shadow-lg">
+            <blockquote class="flex-1 text-base italic leading-relaxed text-slate-700">
+              <p>“Economizamos semanas de tabulação e evitamos um processo trabalhista grave usando os planos de ação do Proativa.”</p>
+            </blockquote>
+            <figcaption class="mt-6 border-t border-blue-200/60 pt-4 text-sm font-semibold text-slate-900">
+              Mariana Costa
+              <span class="mt-1 block font-normal text-slate-500">Diretora de RH, indústria de autopeças</span>
+            </figcaption>
+          </figure>
+          <figure class="flex h-full flex-col rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50/80 to-white p-8 shadow-lg">
+            <blockquote class="flex-1 text-base italic leading-relaxed text-slate-700">
+              <p>“Antes eram três dias fechando Excel para entregar o inventário. Hoje o PDF sai em minutos — o cliente vê o heatmap e já entende onde agir.”</p>
+            </blockquote>
+            <figcaption class="mt-6 border-t border-amber-200/60 pt-4 text-sm font-semibold text-slate-900">
+              Ricardo Almeida
+              <span class="mt-1 block font-normal text-slate-500">Consultor SST, Campo Grande/MS</span>
+            </figcaption>
+          </figure>
+          <figure class="flex h-full flex-col rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50/80 to-white p-8 shadow-lg">
+            <blockquote class="flex-1 text-base italic leading-relaxed text-slate-700">
+              <p>“A fiscalização cobrou evidência de psicossociais; mostramos o histórico no dashboard e o plano de ação. Saímos sem autuação — o investimento se pagou na hora.”</p>
+            </blockquote>
+            <figcaption class="mt-6 border-t border-emerald-200/60 pt-4 text-sm font-semibold text-slate-900">
+              Fernanda Duarte
+              <span class="mt-1 block font-normal text-slate-500">Coordenadora SESMT, logística</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 7: Preços -->
+    <section id="precos" class="relative scroll-mt-28 bg-slate-50 px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="precos-heading">
+      <div class="relative mx-auto max-w-7xl">
+        <div class="text-center">
+          <p class="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-800 shadow-sm">
+            <span aria-hidden="true">🔥</span>
+            OFERTA DE LANÇAMENTO: 70% DE DESCONTO nos primeiros dias!
+          </p>
+          <h2 id="precos-heading" class="mt-6 font-display text-3xl font-extrabold text-slate-900 sm:text-4xl">
+            Invista na conformidade com condições exclusivas.
+          </h2>
+          <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+            A NR-01 entra em vigor em <strong class="font-semibold text-slate-900">26/05/2026</strong>. Garanta o Proativa agora e monte o histórico de prevenção antes da fiscalização apertar.
+          </p>
+        </div>
+
+        <div class="pricing-urgency-strip mx-auto mt-10 max-w-2xl rounded-2xl p-5 sm:p-6">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xs font-extrabold uppercase tracking-wider text-red-700">Promoção limitada</p>
+              <p class="mt-1 text-base font-extrabold text-slate-900">Só restam poucas vagas com 70% OFF nesta leva</p>
+            </div>
+            <span class="inline-flex w-fit shrink-0 items-center rounded-full bg-gradient-to-r from-red-600 to-orange-500 px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-white shadow-lg shadow-red-500/40">Último lote promocional</span>
+          </div>
+          <div class="mt-4 h-3 w-full overflow-hidden rounded-full bg-red-100 ring-1 ring-red-200/80" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" aria-label="Vagas da promoção já reservadas">
+            <div class="h-full w-[91%] rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 shadow-sm"></div>
+          </div>
+          <p class="mt-2 text-sm font-semibold text-red-900/90">91% das licenças com desconto máximo já foram pré-reservadas — finalize hoje para não perder o valor.</p>
+        </div>
+
+        <div class="mt-10 flex flex-col items-center justify-center gap-3">
+          <p class="text-sm font-semibold text-slate-700">Escolha o período de cobrança:</p>
+          <div id="billing-toggle" class="billing-toggle" role="group" aria-label="Período de cobrança dos planos">
+            <button type="button" id="billing-monthly" aria-pressed="false">Mensal</button>
+            <button type="button" id="billing-yearly" aria-pressed="true">Anual</button>
+          </div>
+          <p class="text-xs text-slate-500">No anual, o desconto de lançamento já está aplicado sobre o valor anual.</p>
+        </div>
+
+        <div class="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
+          <!-- Starter -->
+          <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 class="font-display text-xl font-bold text-slate-900">Starter</h3>
+            <p class="mt-2 text-sm text-slate-600">Pequenas empresas e consultores independentes.</p>
+            <div class="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-4">
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-600">70% OFF no lançamento</p>
+              <div class="mt-2" data-price-row>
+                <p class="text-sm text-slate-500">
+                  De <span class="price-strike"><span data-price-old data-monthly="R$ 69,90" data-yearly="R$ 697,00">R$ 697,00</span></span><span class="js-price-period text-slate-500" data-suffix-month="/mês" data-suffix-year="/ano">/ano</span>
+                </p>
+                <p class="mt-1 font-display text-4xl font-extrabold text-slate-900">
+                  <span data-price-new data-monthly="R$ 20,97" data-yearly="R$ 209,10">R$ 209,10</span><span class="js-price-period text-lg font-semibold text-slate-500" data-suffix-month="/mês" data-suffix-year="/ano">/ano</span>
+                </p>
+              </div>
+            </div>
+            <p class="mt-6 text-xs font-bold uppercase tracking-wide text-slate-500">Recursos</p>
+            <ul class="mt-3 flex-1 space-y-2.5 text-sm" role="list">
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">1</strong> empresa</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">1</strong> pesquisa/mês</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">20</strong> respondentes</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">1</strong> usuário</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Relatório PDF básico</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Exportação Excel</span></li>
+              <li class="plan-feat-no flex items-start gap-2"><span class="plan-feat-icon mt-0.5 font-bold" aria-hidden="true">✕</span> <span>Matriz de Risco P×S</span></li>
+              <li class="plan-feat-no flex items-start gap-2"><span class="plan-feat-icon mt-0.5 font-bold" aria-hidden="true">✕</span> <span>Filtros GHE/Setor</span></li>
+              <li class="plan-feat-no flex items-start gap-2"><span class="plan-feat-icon mt-0.5 font-bold" aria-hidden="true">✕</span> <span>Suporte</span></li>
+            </ul>
+            <a href="#cta-final" class="mt-8 flex w-full items-center justify-center rounded-xl bg-blue-600 py-4 text-base font-extrabold text-white transition hover:bg-blue-700">
+              Assinar Starter
+            </a>
+          </div>
+
+          <!-- Profissional -->
+          <div class="relative flex flex-col rounded-2xl border-2 border-slate-900 bg-white p-8 shadow-lg lg:-mt-2 lg:p-9">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-slate-900 px-4 py-1 text-xs font-bold uppercase tracking-wide text-white">Mais escolhido</span>
+            <h3 class="font-display text-xl font-bold text-slate-900">Profissional</h3>
+            <p class="mt-2 text-sm text-slate-600">Empresas e consultorias SST em crescimento.</p>
+            <div class="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-4">
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-600">70% OFF no lançamento</p>
+              <div class="mt-2" data-price-row>
+                <p class="text-sm text-slate-500">
+                  De <span class="price-strike"><span data-price-old data-monthly="R$ 99,90" data-yearly="R$ 997,00">R$ 997,00</span></span><span class="js-price-period text-slate-500" data-suffix-month="/mês" data-suffix-year="/ano">/ano</span>
+                </p>
+                <p class="mt-1 font-display text-5xl font-extrabold text-slate-900">
+                  <span data-price-new data-monthly="R$ 29,97" data-yearly="R$ 299,10">R$ 299,10</span><span class="js-price-period text-xl font-semibold text-slate-500" data-suffix-month="/mês" data-suffix-year="/ano">/ano</span>
+                </p>
+              </div>
+            </div>
+            <p class="mt-6 text-xs font-bold uppercase tracking-wide text-slate-500">Recursos</p>
+            <ul class="mt-3 flex-1 space-y-2.5 text-sm" role="list">
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">Até 10</strong> empresas</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">10</strong> pesquisas/mês</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">200</strong> respondentes</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">2</strong> usuários</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Relatório PDF básico</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Exportação Excel</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Matriz de Risco P×S</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Filtros GHE/Setor</span></li>
+              <li class="plan-feat-no flex items-start gap-2"><span class="plan-feat-icon mt-0.5 font-bold" aria-hidden="true">✕</span> <span>Suporte</span></li>
+            </ul>
+            <a href="#cta-final" class="btn-pro-cta mt-8 flex w-full items-center justify-center rounded-xl bg-blue-600 py-4 text-base font-extrabold text-white transition hover:bg-blue-700">
+              Assinar Profissional
+            </a>
+          </div>
+
+          <!-- Empresarial -->
+          <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 class="font-display text-xl font-bold text-slate-900">Empresarial</h3>
+            <p class="mt-2 text-sm text-slate-600">Grandes operações, redes e consultorias.</p>
+            <div class="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-4">
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-600">70% OFF no lançamento</p>
+              <div class="mt-2" data-price-row>
+                <p class="text-sm text-slate-500">
+                  De <span class="price-strike"><span data-price-old data-monthly="R$ 199,90" data-yearly="R$ 1.997,00">R$ 1.997,00</span></span><span class="js-price-period text-slate-500" data-suffix-month="/mês" data-suffix-year="/ano">/ano</span>
+                </p>
+                <p class="mt-1 font-display text-4xl font-extrabold text-slate-900">
+                  <span data-price-new data-monthly="R$ 59,97" data-yearly="R$ 599,10">R$ 599,10</span><span class="js-price-period text-lg font-semibold text-slate-500" data-suffix-month="/mês" data-suffix-year="/ano">/ano</span>
+                </p>
+              </div>
+            </div>
+            <p class="mt-6 text-xs font-bold uppercase tracking-wide text-slate-500">Recursos</p>
+            <ul class="mt-3 flex-1 space-y-2.5 text-sm" role="list">
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">25</strong> empresas</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">50</strong> pesquisas/mês</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">500</strong> respondentes</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span><strong class="font-semibold text-slate-900">5</strong> usuários</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Relatório PDF básico</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Exportação Excel</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Matriz de Risco P×S</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Filtros GHE/Setor</span></li>
+              <li class="plan-feat-yes flex items-start gap-2"><span class="mt-0.5 font-semibold text-slate-900" aria-hidden="true">✓</span> <span>Suporte</span></li>
+            </ul>
+            <a href="#cta-final" class="mt-8 flex w-full items-center justify-center rounded-xl bg-blue-600 py-4 text-base font-extrabold text-white transition hover:bg-blue-700">
+              Assinar Empresarial
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 8: FAQ -->
+    <section id="faq" class="scroll-mt-28 border-t border-slate-200 bg-slate-50 px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="faq-heading">
+      <div class="mx-auto max-w-3xl">
+        <h2 id="faq-heading" class="text-center font-display text-3xl font-bold text-slate-900 sm:text-4xl">
+          Perguntas frequentes
+        </h2>
+        <p class="mx-auto mt-3 max-w-xl text-center text-slate-600">
+          Transparência para você decidir com segurança antes da <strong class="text-red-600">vigência da NR-01</strong>.
+        </p>
+        <div class="mt-10 space-y-3">
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
+              A pesquisa tem validade jurídica?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+              <p class="pt-3">
+                Sim. O fluxo segue boas práticas de documentação para o PGR: coleta estruturada, rastreabilidade das etapas e relatórios exportáveis para anexar ao inventário de riscos, alinhados às exigências da NR-01 quando aplicável ao seu caso. A responsabilidade final pela adequação do PGR permanece com a empresa e seus especialistas — o Proativa entrega a base técnica e as evidências.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
+              Como garantem o anonimato dos colaboradores?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+              <p class="pt-3">
+                A arquitetura separa identidade de resposta onde aplicável, com controles de LGPD e agregação mínima nos relatórios para evitar reidentificação indevida. Você recebe insights por setor e dimensão demográfica sem expor o indivíduo, o que aumenta a adesão à pesquisa e a defensabilidade do processo.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
+              Serve para clínicas de SST e consultorias?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+              <p class="pt-3">
+                Sim. O modo multi-empresas e os relatórios em PDF foram pensados para quem presta serviço: você gerencia vários clientes no mesmo painel, padroniza entregáveis para auditoria e pode usar white label nos planos superiores.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-4" aria-controls="faq-panel-4">
+              Quão rápido consigo colocar para rodar?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+              <p class="pt-3">
+                Na maioria dos casos, em poucos dias você já dispara a pesquisa (link ou integração com Google Forms), acompanha o preenchimento no dashboard e exporta o PDF. Não é necessário projeto de TI longo: o fluxo foi desenhado para RH e consultores autônomos.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-5" aria-controls="faq-panel-5">
+              Preciso de equipe de TI para usar a plataforma?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+              <p class="pt-3">
+                Não. A interface é visual: heatmap, filtros e exportações em poucos cliques. TI entra apenas se você quiser integrações avançadas (por exemplo, SSO ou APIs no plano Empresarial).
+              </p>
+            </div>
+          </div>
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-6" aria-controls="faq-panel-6">
+              Onde ficam armazenados os dados? É seguro?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6">
+              <p class="pt-3">
+                Os dados são tratados com práticas alinhadas à LGPD, com controles de acesso e backups. Você mantém governança sobre quem acessa relatórios na sua organização ou consultoria.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-7" aria-controls="faq-panel-7">
+              O desconto de 70% vale para sempre?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7">
+              <p class="pt-3">
+                Não. É uma condição de lançamento com vagas limitadas, pensada para quem quer se antecipar à fiscalização da NR-01. Quando a leva encerrar, os valores voltam ao preço de tabela.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item rounded-xl border border-slate-200 bg-white shadow-sm">
+            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-slate-900" aria-expanded="false" id="faq-btn-8" aria-controls="faq-panel-8">
+              Posso migrar de plano depois?
+              <span class="text-slate-400" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel hidden border-t border-slate-100 px-5 pb-4 pt-0 text-slate-600" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8">
+              <p class="pt-3">
+                Sim. À medida que sua operação ou carteira de clientes cresce, você pode subir de plano para liberar mais empresas, respondentes e recursos como white label ou integração com WhatsApp.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 9: Rodapé conversão -->
+    <section id="cta-final" class="bg-gradient-to-b from-slate-900 to-[#020617] px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="cta-final-heading">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 id="cta-final-heading" class="font-display text-3xl font-extrabold text-white sm:text-4xl">
+          Sua empresa não pode esperar até 2026. Construa seu histórico de prevenção agora.
+        </h2>
+        <p class="mt-4 text-lg text-slate-300">
+          Cada mês sem medição é exposição. Entre para a leva com 70% OFF antes que o cronômetro zere.
+        </p>
+        <a
+          href="#precos"
+          class="mt-10 inline-flex w-full max-w-md items-center justify-center rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-10 py-5 text-lg font-bold text-white shadow-xl shadow-emerald-900/40 transition hover:from-emerald-400 hover:to-emerald-500 sm:w-auto cta-pulse"
+        >
+          Quero o Proativa com 70% OFF
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#020617] px-4 py-14 sm:px-6 lg:px-8" role="contentinfo">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <p class="font-display text-lg font-bold text-white"><span class="text-blue-400">Pro</span>ativa</p>
+          <p class="mt-3 max-w-xs text-sm text-slate-400">
+            Gestão de Riscos Psicossociais com metodologia Proart. Prepare-se para a NR-01 antes de 26/05/2026.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">SSL seguro</span>
+            <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">LGPD</span>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Produto</p>
+          <nav class="mt-4 flex flex-col gap-2 text-sm text-slate-300" aria-label="Produto">
+            <a href="#como-funciona" class="transition hover:text-white">Metodologia</a>
+            <a href="#solucao" class="transition hover:text-white">Recursos</a>
+            <a href="#relatorios" class="transition hover:text-white">Relatórios</a>
+            <a href="#matriz-pxs" class="transition hover:text-white">Matriz P×S</a>
+            <a href="#precos" class="transition hover:text-white">Planos</a>
+          </nav>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Empresa</p>
+          <nav class="mt-4 flex flex-col gap-2 text-sm text-slate-300" aria-label="Empresa">
+            <a href="#" class="transition hover:text-white">Sobre Nós</a>
+            <a href="mailto:contato@magoweb.com.br" class="transition hover:text-white">Contato</a>
+            <a href="#" class="transition hover:text-white">Blog</a>
+            <a href="#" class="transition hover:text-white">Parceiros</a>
+          </nav>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Suporte</p>
+          <nav class="mt-4 flex flex-col gap-2 text-sm text-slate-300" aria-label="Suporte">
+            <a href="#faq" class="transition hover:text-white">FAQ</a>
+            <a href="mailto:contato@magoweb.com.br" class="transition hover:text-white">Contato</a>
+          </nav>
+          <div class="mt-6 rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Fale conosco</p>
+            <a href="mailto:contato@magoweb.com.br" class="mt-2 block text-sm font-semibold text-white hover:text-blue-300">contato@magoweb.com.br</a>
+            <a href="tel:+5567992875364" class="mt-2 block text-sm font-semibold text-emerald-400 hover:text-emerald-300">(67) 99287-5364</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center sm:flex-row sm:text-left">
+        <p class="text-xs text-slate-500">CNPJ: 12.345.678/0001-90 (exemplo fictício)</p>
+        <p class="text-xs text-slate-500">© 2026 Proativa. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
